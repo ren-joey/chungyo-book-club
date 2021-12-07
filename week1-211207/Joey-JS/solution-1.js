@@ -13,14 +13,11 @@
  */
  var removeDuplicates = function(nums) {
     let front = 0;
-    let rear = 0;
 
     for (let i = 0; i < nums.length; i += 1) {
-        rear += 1;
-        if (rear === nums.length) break;
-        if(nums[front] !== nums[rear]) {
+        if (nums[front] !== nums[i]) {
             front += 1;
-            nums[front] = nums[rear];
+            nums[front] = nums[i];
         }
     }
 
