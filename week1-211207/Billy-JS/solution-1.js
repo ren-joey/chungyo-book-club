@@ -14,11 +14,9 @@ const checkDuplicate = (nums, callback) => {
             nums.splice(i + 1, 1);
             nums.push('_');
 
-            callback();
-
             checkDuplicate(nums, callback);
             break;
-        }
+        } else callback();
     }
     return nums;
 };
