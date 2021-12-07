@@ -7,24 +7,30 @@
  * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
  */
 
-let count = 0;
+const checkDuplicate = (nums, callback) => {
+    for (let i = 0; i < nums.length; i += 1) {
+        if (nums[i] === '_') break;
+        if (nums[i] === nums[i + 1]) {
+            nums.splice(i + 1, 1);
+            nums.push('_');
 
-const removeDuplicateFromSortedArr = (intArr) => {
-    for (let i = 0; i < intArr.length; i += 1) {
-        if (intArr[i] === '_') break;
-        if (intArr[i] === intArr[i + 1]) {
-            intArr.splice(i + 1, 1);
-            intArr.push('_');
+            callback();
 
-            count += 1;
-
-            removeDuplicateFromSortedArr(intArr);
+            checkDuplicate(nums, callback);
             break;
         }
     }
-    return intArr;
+    return nums;
 };
 
-const result = removeDuplicateFromSortedArr([1, 1, 1, 2, 3, 3, 4, 5, 6, 7, 7, 8, 9, 9]);
+const removeDuplicateFromSortedArr = (nums) => {
+    let count = 0;
+    checkDuplicate(nums, () => {
+        count += 1;
+    })
+    console.log(nums);
+    return count;
+};
 
-console.log(`${count}, nums = [${result}]`);
+const result = removeDuplicateFromSortedArr([0,0,1,1,1,2,2,3,3,4]);
+console.log(result);
