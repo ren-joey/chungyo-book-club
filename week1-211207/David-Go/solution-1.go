@@ -7,19 +7,24 @@
  * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/
  */
 
- collect := []int{} 
- for _ , v:= range nums{
- 
-	inCollect := false
-	for i := 0 ; i < len(collect) ;i++{
-	  inCollect = collect[i] == v 
-	}
-	
-	if !inCollect {
-		collect = append(collect,v)
+arr := []int{}
+for _, v := range nums {
+
+	valExists := false
+
+	for _, aVal := range arr {
+		if aVal == v {
+			valExists = true
+			break
+		}
 	}
 
-}	
- 
-return len(collect)
+	if valExists == false {
+		arr = append(arr, v)
+		nums[len(arr)-1] = v
+	}
+
+}
+
+return len(arr)
  
