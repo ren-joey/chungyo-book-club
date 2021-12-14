@@ -6,3 +6,12 @@
  * 題名：First Unique Character in a String
  * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/
  */
+
+var firstUniqChar = function(s) {
+    for (i=0; i < s.length; i += 1) {
+        if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) {
+            return i;
+        }
+    }
+    return -1;
+};
