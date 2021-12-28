@@ -49,23 +49,26 @@ moveZeroes(
  }
 
  // 參考 https://leetcode.com/problems/deepest-leaves-sum/discuss/565187/Java-Recursive-faster-than-100.00
-function recursiveSum(node: TreeNode, level: number) {
-    if(!node) return null;
-
-}
 
 
 function deepestLeavesSum(root: TreeNode | null): number {
-    let queue = [root];
     let sum = 0;
-    while(queue.length) {
-        for (let i = queue.length - 1; i >=0; i--) {
-            const node = queue.shift();
-            sum += node.val;
-            if(node.right) queue.push(node.right)
-            if(node.left) queue.push(node.left);
+    let maxLevel = 1;
+    
+    function recursiveSum(node: TreeNode, level: number) {
+        if(!node) return;
+        if(level > maxLevel) {
+            sum = 0;
+            maxLevel = level;
         }
+        if(level === maxLevel) {
+            sum += node.val;
+        };
+        if(node.left) recursiveSum(node.left, level + 1);
+        if(node.right) recursiveSum(node.right, level + 1);
     }
+
+    recursiveSum(root, 0);
 
     return sum;
 };
