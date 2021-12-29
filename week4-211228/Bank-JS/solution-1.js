@@ -1,10 +1,10 @@
 /**
- * ===== 技術集會 WEEK3 =====
+ * ===== 技術集會 WEEK4 =====
  * 本周題目 [EASY]
- * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/96/sorting-and-searching/587/
+ * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
  *
  * 本周題目 [MEDIUM]
- * 連結：https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/
+ * 連結：https://leetcode.com/problems/deepest-leaves-sum/
  */
 
 var merge = function (nums1, m, nums2, n) {
@@ -34,12 +34,3 @@ var mymy = function (nums1, m, nums2, n) {
   aa.sort();
   console.log("mymy", aa);
 };
-
-/**
- * ===== 技術集會 WEEK4 =====
- * 本周題目 [EASY]
- * 連結：https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
- *
- * 本周題目 [MEDIUM]
- * 連結：https://leetcode.com/problems/deepest-leaves-sum/
- */
