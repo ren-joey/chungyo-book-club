@@ -1,5 +1,5 @@
 /**
- * ===== 技術集會 WEEK4 =====
+ * ===== 技術集會 WEEK5 =====
  * 本周題目 [MEDIUM]
  * 連結：https://leetcode.com/problems/partition-labels/
  */
