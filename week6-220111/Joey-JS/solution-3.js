@@ -9,17 +9,11 @@
  * @return {number}
  */
  var singleNumber = function(nums) {
-    const map = [];
-    const _map = [];
+    let res = 0;
 
     for (let i = 0; i < nums.length; i += 1) {
-        if (nums[i] >= 0) {
-            map[nums[i]] = ~~map[nums[i]] + 1;
-        } else {
-            const idx = -nums[i];
-            _map[idx] = ~~_map[idx] + 1;
-        }
+        res ^= nums[i];
     }
 
-    return map.indexOf(1) !== -1 ? map.indexOf(1) : 0 - _map.indexOf(1);
+    return res;
 };
